@@ -1,5 +1,6 @@
 import React from "react";
 import styles from '../Filter/filter.module.css'
+import PropTypes from "prop-types";
 
 class Filter extends React.Component {
 
@@ -25,6 +26,18 @@ render() {
     </div>
     )
 }
+}
+
+Filter.propTypes = {
+  contacts: PropTypes.arrayOf(PropTypes.shape( {
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string,
+    number: PropTypes.string,
+  })),
+
+  filter: PropTypes.string,
+  onChange: PropTypes.func,
+
 }
 
 export default Filter;

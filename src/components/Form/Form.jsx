@@ -1,5 +1,6 @@
 import React from "react";
 import styles from '../Form/form.module.css'
+import PropTypes from "prop-types";
 
 class Form extends React.Component {
 
@@ -26,8 +27,6 @@ reset = () => {
 // пока только предотвращение перезагрузки странички
       handleSubmit = event =>{
         event.preventDefault();
-
-        console.log(this.state)
 
         this.props.onSubmit(this.state)
 
@@ -66,7 +65,8 @@ className={styles.input}
         )
         }
 }
-
-
+Form.propTypes = {
+  onSubmit: PropTypes.func,
+}
 
 export default Form;
