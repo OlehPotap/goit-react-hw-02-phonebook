@@ -75,7 +75,6 @@ class App extends React.Component {
         <Form onSubmit={this.SubmitContactToList} />
         <h2 className="display-cotnact-box__heading">Contacts</h2>
         <Filter
-          contacts={this.state.contacts}
           filter={this.state.filter}
           onChange={this.setFilteredData}
         />
